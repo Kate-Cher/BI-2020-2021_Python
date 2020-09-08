@@ -1,1 +1,1 @@
-# BI-2020-2021_Python
+"Repository for 2020/20 bioinformatic institute python course" 

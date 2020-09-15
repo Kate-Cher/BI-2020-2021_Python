@@ -1,38 +1,59 @@
-def check_isdigit(n):
-    f = 1
+def check_isdigit(num):
+    fl = 1
     try:
-        float(n)
+        float(num)
     except ValueError:
-        f = 0
-    while f == 0:
-        n = input("Not a number. Enter a number: ")
+        fl = 0
+    while fl == 0:
+        num = input("Not a number. Enter a number: ")
         try:
-            float(n)
-            f = 1
+            float(num)
+            fl = 1
         except ValueError:
-            f = 0
-    return float(n)
-
-fin = ''
-th = {'/', '*', '-', '+'}
-
-while fin != '!':
-    a = input("Enter a number: ")
-    a = check_isdigit(a)
-
-    b = input("Enter an operand: ")
-    while b not in th:
-        b = input("Choose operand from /, *, -, + and write it")
-
-    c = input("Enter a number: ")
-    c = check_isdigit(c)
-
-    if b == "+": print(a+c)
-    elif b == "-": print(a-c)
-    elif b == "/": print(a/c)
-    else: print(a*c)
-
-    print("Enter ! to finish or any key to continue")
-    fin = input()
+            fl = 0
+    return float(num)
 
 
+print("List of valid operators:" + '\n' +
+      "Use * for multiplication" + '\n' +
+      "Use / for division" + '\n' +
+      "Use + for addition" + '\n' +
+      "Use - for subtraction" + '\n' +
+      "Use ** for exponentiation" + '\n' +
+      "Use // for floor division" + '\n' +
+      "Use % for modulus operator" + '\n')
+final = ''
+operators_list = {'/', '*', '-', '+', '%', '**', '//'}
+
+# Checking for more then one operation
+while final != '!':
+
+    # Getting numbers and operator from user
+    num1 = input("Enter a number: ")
+    num1 = check_isdigit(num1)
+
+    operator = input("Enter an operator: ")
+    while operator not in operators_list:
+        operator = input("Your operator isn't valid. Choose operator from list above and write it: ")
+
+    num2 = input("Enter a number: ")
+    num2 = check_isdigit(num2)
+
+    # Calculations
+    if operator == "+":
+        print(num1 + num2)
+    elif operator == "-":
+        print(num1 - num2)
+    elif operator == "/":
+        print(num1 / num2)
+    elif operator == "*":
+        print(num1 * num2)
+    elif operator == "**":
+        print(num1**num2)
+    elif operator == "//":
+        print(num1 // num2)
+    elif operator == "%":
+        print(num1 % num2)
+
+    print("Enter ! to finish or any key to make more calculations")
+    final = input()

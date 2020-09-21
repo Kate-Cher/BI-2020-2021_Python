@@ -34,7 +34,8 @@ while final != '!':
 
     operator = input("Enter an operator: ")
     while operator not in operators_list:
-        operator = input("Your operator isn't valid. Choose operator from list above and write it: ")
+        operator = input("Your operator isn't valid.\n 
+                         Choose operator from list above and write it: ")
 
     num2 = input("Enter a number: ")
     num2 = check_isdigit(num2)

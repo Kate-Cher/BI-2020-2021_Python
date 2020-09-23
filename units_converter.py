@@ -26,7 +26,7 @@ if convert_type == 1:
         byte_conv = vol * 2 ** (10 * (conv[0] - conv[1] - 1)) * 8
     else:
         byte_conv = vol
-    print(str(byte_conv) + " " + str(data_vol[conv[1]]) + "s in " + str(vol) + " " + str(data_vol[conv[0]]))
+        out_str = str(vol) + " " + str(data_vol[conv[0]])
+    print(str(byte_conv) + " " + str(data_vol[conv[1]]) + "s in " + out_str)
 elif convert_type == 2:
     print("Choose units you'd like to convert:")
-

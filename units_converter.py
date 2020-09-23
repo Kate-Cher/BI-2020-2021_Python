@@ -30,3 +30,4 @@ if convert_type == 1:
     print(str(byte_conv) + " " + str(data_vol[conv[1]]) + "s in " + out_str)
 elif convert_type == 2:
     print("Choose units you'd like to convert:")
+print("Thank you for using. Goodbye!)

@@ -29,4 +29,4 @@ axs[0].set_xlabel('Length')
 axs[1].set_xlabel('Length (log)')
 f.tight_layout()
 plt.show()
-
+plt.savefig("Fasta_lens.png")

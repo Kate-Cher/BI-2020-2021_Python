@@ -3,8 +3,6 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 import math
-import seaborn as sns
-import pandas as pd
 
 
 def rand_vs_np():
@@ -84,11 +82,9 @@ def bogo_vis():
     final_list = []
     for j in range(4):
         times = []
-        x = []
-        for i in range(4, 11):
+        for i in range(4, 10):
             samp = np.random.randint(0, 100, i)
             times.append(time_check(samp))
-            x.append(i)
         final_list.append(times)
         print(*times)
     final_array = np.array(final_list)
@@ -96,8 +92,12 @@ def bogo_vis():
 
     aver = np.average(final_array, axis=0)
     ln_aver = [math.log(av) for av in aver]
-    disp = np.std([math.log(fin) for fin in final_array[j]], axis=0)
-    x = np.array(x)
+    ln_fin = []
+    for j in range(4):
+        ln_fin.append([math.log(fin) for fin in final_array[j]])
+    ln_fin = np.array(ln_fin)
+    disp = np.std(ln_fin, axis=0)
+    x = np.array([i for i in range(4, 10)])
 
     plt.errorbar(x, ln_aver, yerr=disp)
     plt.plot(x, ln_aver)
@@ -111,7 +111,7 @@ def bogo_vis():
     plt.close()
 
 
-random_walk()
+# random_walk()
 # rand_vs_np()
 # print(text_shuffle())
-# bogo_vis()
+bogo_vis()

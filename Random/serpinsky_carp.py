@@ -1,15 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-apx = []
-apx.append([0, 0])
-apx.append([1, 0])
-apx.append([0, 1])
-apx.append([1, 1])
-apx.append([0, 0.5])
-apx.append([0.5, 0])
-apx.append([0.5, 1])
-apx.append([1, 0.5])
+apx = [[0, 0], [1, 0], [0, 1], [1, 1], [0, 0.5], [0.5, 0], [0.5, 1], [1, 0.5]]
 
 n = 50000
 points = [tuple(np.random.randint(0, 2, 2))]

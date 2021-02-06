@@ -112,6 +112,6 @@ def bogo_vis():
 
 
 random_walk()
-#rand_vs_np()
-#print(text_shuffle())
-#bogo_vis()
+# rand_vs_np()
+# print(text_shuffle())
+# bogo_vis()

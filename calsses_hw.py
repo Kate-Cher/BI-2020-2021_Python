@@ -15,12 +15,11 @@ class Sequence:
                / len(self.nucl_acid_string) * 100
 
     def reverse_complement(self):
-        """
-        :returns reverse complement sequence"""
+        """:returns reverse complement sequence"""
         rev_comp_sec = ""
         for nucl in self.nucl_acid_string:
-            rev_comp_sec += self.compl_nucl[nucl]
-        return type(self)(rev_comp_sec)
+            rev_comp_sec += self.comp_nucl[nucl]
+        return type(self)(rev_comp_sec[::-1])
 
     def __iter__(self):
         for elem in self.nucl_acid_string:
@@ -35,6 +34,19 @@ class Sequence:
 
     def __add__(self, other):
         return Sequence(self.nucl_acid_string + other.nucl_acid_string)
+
+    def __repr__(self):
+        return f'{type(self).__name__}({self.nucl_acid_string})'
+
+    def __len__(self):
+        return len(self.nucl_acid_string)
+
+    def __getitem__(self, slic_e):
+        return self.nucl_acid_string[slic_e]
+
+    def __str__(self):
+        return self.nucl_acid_string
+
 
 
 class DNA(Sequence):
@@ -73,8 +85,3 @@ class RNA(Sequence):
         else:
             raise TypeError("Invalid alphabet. Must be 'A', 'U', 'G', 'C', 'N'")
 
-
-if __name__ == '__main__':
-    seq_1 = DNA('ATGGC')
-    seq_2 = RNA('GCCAU')
-    print(seq_1.reverse_complement())

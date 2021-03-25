@@ -48,7 +48,6 @@ class Sequence:
         return self.nucl_acid_string
 
 
-
 class DNA(Sequence):
     """DNA sequence"""
     alph = {'A', 'T', 'G', 'C', 'N'}
@@ -84,4 +83,3 @@ class RNA(Sequence):
             super().__init__(nucl_acid_string)
         else:
             raise TypeError("Invalid alphabet. Must be 'A', 'U', 'G', 'C', 'N'")
-

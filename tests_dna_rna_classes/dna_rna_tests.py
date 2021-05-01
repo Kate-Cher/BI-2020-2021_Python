@@ -5,7 +5,7 @@ from hw_classes import RNA
 
 
 class SequenceTestMethods(unittest.TestCase):
-
+    """checking sequence class correctness"""
     def setUp(self):
         self.sequence = Sequence("ACGGTC")
 
@@ -36,7 +36,7 @@ class SequenceTestMethods(unittest.TestCase):
 
 
 class DNATestMethods(unittest.TestCase):
-
+    """only DNA and its methods correctness"""
     def setUp(self):
         self.dna1 = DNA("ACGGTA")
         self.dna2 = DNA("AAAAAA")
@@ -74,6 +74,7 @@ class DNATestMethods(unittest.TestCase):
     def test_dna_seq(self):
         self.assertTrue(issubclass(type(self.dna1), Sequence))
 
+    # Methods tests
     def test_gc_cont(self):
         self.assertEqual(self.dna1.gc_content(), 50)
         self.assertEqual(self.dna2.gc_content(), 0)
@@ -98,7 +99,7 @@ class DNATestMethods(unittest.TestCase):
 
 
 class RNATestMethods(unittest.TestCase):
-
+    """only RNA and its methods correctness"""
     def setUp(self):
         self.rna1 = RNA("AUGCUA")
         self.rna2 = RNA("UUUUUU")
@@ -133,9 +134,9 @@ class RNATestMethods(unittest.TestCase):
     def test_real_str(self):
         self.assertEqual(str(self.rna1), "AUGCUA")
 
-    def test_dna_seq(self):
+    def test_rna_seq(self):
         self.assertTrue(issubclass(type(self.rna1), Sequence))
-
+    # Methods tests
     def test_gc_cont(self):
         self.assertEqual(self.rna1.gc_content(), 33.33333333333333)
         self.assertEqual(self.rna2.gc_content(), 0)
@@ -150,6 +151,7 @@ class RNATestMethods(unittest.TestCase):
         self.assertEqual(self.rna1.reverse_complement(), RNA("UAGCAU"))
         self.assertEqual(RNA("U").reverse_complement(), RNA("A"))
         self.assertEqual(RNA(""), RNA(""))
+
 
 
 if __name__ == "__main__":
